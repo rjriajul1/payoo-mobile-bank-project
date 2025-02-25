@@ -3,17 +3,60 @@
 
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo Mobile Bank Project</title>
-    <!-- daisy UI and tailwind CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo Mobile Bank Project</title>
+  <!-- daisy UI and tailwind CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
-<body>
- <h1 class="text-3xl">hello</h1>
+<body class="bg-slate-800">
+
+ <section class="max-w-2xl min-h-screen bg-gray-200 mx-auto py-6 relative">
+  <header>
+    <nav class="flex flex-col justify-center items-center ">
+      
+        <div class="mt-32">
+          <img src="asset/Rectangle 1.png" alt="">
+        </div>
+        <div class="absolute mt-6">
+          <img src="asset/Group.png" alt="">
+        
+      </div>
+    </nav>
+  </header>
+  <!-- form section start here -->
+  <div class=" w-full absolute top-80  mx-auto">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <form class="card-body">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-bold">Mobile Number</span>
+            </label>
+            <input value="01983564341"  id="acount-number" type="number" placeholder="Enter your number"
+              class="input input-bordered" required />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-bold">4 Digit Pin</span>
+            </label>
+            <input  id="pin-number" type="text" placeholder="Enter 4 Digit Pin"
+              class="input input-bordered" required />
+          </div>
+          <div class="form-control mt-6">
+            <button id="btn-login" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- form section end here -->
+ </section>
+  <script src="js/login.js"></script>
 </body>
 
 </html>
