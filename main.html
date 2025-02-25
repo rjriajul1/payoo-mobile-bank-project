@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,7 @@
 
 <body class="bg-slate-800">
     <section class="max-w-2xl min-h-screen bg-gray-200 mx-auto py-6 relative">
+        <!-- header section start here -->
         <header class="p-6">
             <nav class="relative">
                 <div class="flex justify-between items-center px-3">
@@ -27,23 +28,25 @@
                     </div>
                 </div>
                 <div class="absolute top-6 left-24">
-                    <p class="text-black font-bold block text-xl">$4500</p>
+                    <p class="text-black font-bold block text-xl">$ <span id="main-balance">4500</span></p>
                     <p class="font-bold">Available Balance</p>
                 </div>
             </nav>
         </header>
+        <!-- header section end here -->
+
         <!-- welcome section start here -->
         <section class="p-6">
       <h1 class="text-black font-bold text-xl mb-3">🔥 Welcome to Payooo!</h1>
       <p class="font-bold mb-6 text-gray-500">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
       <div class="grid grid-cols-3 gap-3">
         <!-- box one -->
-        <div class="border bg-gray-300-200 shadow-sm border-gray-300 rounded-md text-center p-4">
+        <div id="add-money-box" class="border bg-gray-300-200 shadow-sm border-gray-300 rounded-md text-center p-4">
             <img class="mx-auto object-cover w-10" src="asset/wallet 1.png" alt="">
             <p class="mt-2 font-bold">Add Money</p>
         </div>
         <!-- box two -->
-        <div class="border bg-gray-300-200 shadow-sm border-gray-300 rounded-md text-center p-4">
+        <div id="cashour-box" class="border bg-gray-300-200 shadow-sm border-gray-300 rounded-md text-center p-4">
             <img class="mx-auto object-cover w-10" src="asset/send 1.png" alt="">
             <p class="mt-2 font-bold">Cashout</p>
         </div>
@@ -71,8 +74,9 @@
       </div>
         </section>
         <!-- welcome section end here -->
-     <section>
-        
+
+         <!-- add money start here -->
+     <section id="add-money-form">
         <div class=" w-full mx-auto">
             <h1 class="text-2xl text-black ml-24 font-bold">Add Money</h1>
             <div class="hero-content flex-col lg:flex-row-reverse">
@@ -93,25 +97,25 @@
                     <label class="label  ">
                       <span class="label-text font-bold text-gray-500">Bank Account Number</span>
                     </label>
-                    <input  value="01983564341"  id="acount-number" type="number" placeholder="Enter 11 digit accout number"
+                    <input  value="01983564341"  id="bank-acount-number" type="number" placeholder="Enter 11 digit accout number"
                       class="input input-bordered bg-gray-300 border-none text-gray-600" required />
                   </div>
                   <div class="form-control">
                     <label class="label">
                       <span class="label-text font-bold text-gray-500 ">Amount To Add </span>
                     </label>
-                    <input  id="acount-number" type="number" placeholder="Add Amount To Withdraw"
+                    <input  id="amount-add" type="number" placeholder="Add Amount To Withdraw"
                       class="input input-bordered  bg-gray-300 border-none text-gray-600" required />
                   </div>
                   <div class="form-control">
                     <label class="label">
                       <span class="label-text font-bold text-gray-500">Pin Number</span>
                     </label>
-                    <input  id="pin-number" type="text" placeholder="Enter 4 Digit Pin number"
+                    <input value="1234"  id="pin-number" type="text" placeholder="Enter 4 Digit Pin number"
                       class="input input-bordered  bg-gray-300 border-none text-gray-600" required />
                   </div>
-                  <div class="form-control bg-blue-500 mt-6 rounded-2xl">
-                    <button id="btn-login" class="btn btn-primary">Login</button>
+                  <div class="form-control bg-blue-500 mt-6 rounded-2xl ">
+                    <button id="btn-add-money" class="btn btn-primary font-bold text-xl">Add Money</button>
                   </div>
                 </form>
               </div>
@@ -119,9 +123,52 @@
           </div>
           
      </section>
-        <!-- add money form end here -->
+        <!-- add money end here -->
+
+        <!-- cashout section start here -->
+     <section id="cashout-form">
+        <div class=" w-full mx-auto">
+            <h1 class="text-2xl text-black ml-24 font-bold">Cash Out</h1>
+            <div class="hero-content flex-col lg:flex-row-reverse">
+              <div class="card p-6  w-9/12  shrink-0 shadow-2xl">
+                
+                  <div class="form-control">
+                    <label class="label  ">
+                      <span class="label-text font-bold text-gray-500">Agent Number</span>
+                    </label>
+                    <input  value="01983564341"  id="agent-number" type="number" placeholder="Enter 11 digit number"
+                      class="input input-bordered bg-gray-300 border-none text-gray-600" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text font-bold text-gray-500 ">Amount</span>
+                    </label>
+                    <input  id="withdraw-amount" type="number" placeholder="Enter Amount To Withdraw"
+                      class="input input-bordered  bg-gray-300 border-none text-gray-600" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text font-bold text-gray-500">Pin Number</span>
+                    </label>
+                    <input value="1234"  id="cashout-pin-number" type="text" placeholder="Enter 4 Digit Pin number"
+                      class="input input-bordered  bg-gray-300 border-none text-gray-600" required />
+                  </div>
+                  <div class="form-control bg-blue-500 mt-6 rounded-2xl ">
+                    <button id="btn-withdraw-money" class="btn btn-primary font-bold text-xl">Withdraw Money</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+     </section>
+        <!-- cashout section end here -->
 
     </section>
+    <script src="js/add-money.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/cash-out.js"></script>
+  
 </body>
 
 </html>
